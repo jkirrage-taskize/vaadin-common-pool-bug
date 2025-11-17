@@ -8,7 +8,7 @@ cd module1 && mvn flow:clean-frontend && cd ../module2 && mvn flow:clean-fronten
 ```
 
 `-Djava.util.concurrent.ForkJoinPool.common.parallelism=1` simulates what happens on a 1 or 2 core machine in Java 25,
-where the common pool size defaults to 1.
+where the common pool size defaults to 1 (See comments on [JDK-8360593](https://bugs.openjdk.org/browse/JDK-8360593])).
 
 This POC reproduces the issue reliably on a specific 8 core machine, however probably not with any guarantee. Error
 should be something similar to:
